@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用内联JavaScript</title>
+    <script>
+        // 在这里编写您的JavaScript代码
+        function myFunction() {
+            alert("Hello, World!");
+        }
+    </script>
+</head>
+<body>
+    <h1>使用内联JavaScript</h1>
+    <button onclick="myFunction()">点击我</button>
+</body>
+</html>
