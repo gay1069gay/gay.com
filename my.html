@@ -11,20 +11,24 @@
 	<body>
 		
 		<script>
-			var countUpDate = new Date("Aug 1, 2022 00:00:00").getTime();
-			        setInterval(function() {
-			            var now = new Date().getTime();
-			            var distance = now - countUpDate;
-			            
-			            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			            
-			            document.getElementById("timer").innerHTML = "本站已运行 " + days + " 天 " + hours + " 小时 " + 
-			                                                         minutes + " 分钟 " + seconds + " 秒 " + "";
-			        }, 1000);
-		</script>
+    var countUpDate = new Date("Aug 1, 2021 00:00:00").getTime();
+    setInterval(function() {
+        var now = new Date().getTime();
+        var distance = now - countUpDate;
+
+        // 计算年、天、小时、分钟、秒
+        var years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+        var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = 
+            "本站已运行 " + years + " 年 " + days + " 天 " + 
+            hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒";
+    }, 1000);
+	</script>
+
 
 		<section class="aui-flexView">
 			<header class="aui-navBar aui-navBar-fixed b-line">
@@ -64,7 +68,7 @@
 				
 				<div><a href="mzsm.html" class="aui-topic-item aui-flex">
 						<div class="aui-flex-box">
-							<h4>联系我们</h4>
+							<h4>加入我们</h4>
 						</div>
 						<div class="aui-topic-arrow"></div>
 					</a>
